@@ -1,0 +1,178 @@
+datasource db {
+  provider = "postgres"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+
+model User {
+  id             Int @id @default(autoincrement())
+  email          String  @unique
+  hashedPassword String
+  salt           String
+  role  Role    @default(USER)
+  vault Vault[]
+  contact Contact[]
+}
+
+
+model Vault {
+
+  id Int  @id @default(autoincrement())
+  vaultname String
+  vaultusername String
+  vaultpassword String
+  vaultpassword2 String
+  useremail User? @relation(fields: [userEmailId], references: [email])
+  userEmailId String
+}
+
+model Contact {
+
+  id Int  @id @default(autoincrement())
+  firstname String?
+  lastname String?
+  email String @unique
+  landline String?
+  mobile String?
+  website String?
+  street String?
+  suburb String?
+  notes String?
+  useremail User? @relation(fields: [contactEmailId], references: [email])
+  contactEmailId String
+  appoint Appointment[]
+  fieldx1 Fields1[]
+  fieldx2 Fields2[]
+  fieldx3 Fields3[]
+  fieldx4 Fields4[]
+  fieldx5 Fields5[]
+
+}
+
+model Appointment {
+  id Int  @id @default(autoincrement())
+  time String
+  date String
+  contactemail Contact? @relation(fields: [appointEmailId], references: [email])
+  appointEmailId String
+}
+
+model Fields1 {
+  id Int  @id @default(autoincrement())
+  field1 String
+  field2 String?
+  field3 String?
+  field4 String?
+  field5 String?
+  field6 String?
+  field7 String?
+  field8 String?
+  field9 String?
+  field10 String?
+  field11 String?
+  field12 String?
+  field13 String?
+  field14 String?
+  field15 String?
+  contactemail Contact? @relation(fields: [fields1Id], references: [email])
+  fields1Id String
+}
+
+model Fields2 {
+  id Int  @id @default(autoincrement())
+  field1 String
+  field2 String?
+  field3 String?
+  field4 String?
+  field5 String?
+  field6 String?
+  field7 String?
+  field8 String?
+  field9 String?
+  field10 String?
+  field11 String?
+  field12 String?
+  field13 String?
+  field14 String?
+  field15 String?
+
+  contactemail Contact? @relation(fields: [fields2Id], references: [email])
+  fields2Id String
+}
+
+model Fields3 {
+  id Int  @id @default(autoincrement())
+  field1 String
+  field2 String?
+  field3 String?
+  field4 String?
+  field5 String?
+  field6 String?
+  field7 String?
+  field8 String?
+  field9 String?
+  field10 String?
+  field11 String?
+  field12 String?
+  field13 String?
+  field14 String?
+  field15 String?
+
+  contactemail Contact? @relation(fields: [fields3Id], references: [email])
+  fields3Id String
+}
+
+model Fields4 {
+  id Int  @id @default(autoincrement())
+  field1 String
+  field2 String?
+  field3 String?
+  field4 String?
+  field5 String?
+  field6 String?
+  field7 String?
+  field8 String?
+  field9 String?
+  field10 String?
+  field11 String?
+  field12 String?
+  field13 String?
+  field14 String?
+  field15 String?
+
+  contactemail Contact? @relation(fields: [fields4Id], references: [email])
+  fields4Id String
+}
+
+model Fields5 {
+  id Int  @id @default(autoincrement())
+  field1 String
+  field2 String?
+  field3 String?
+  field4 String?
+  field5 String?
+  field6 String?
+  field7 String?
+  field8 String?
+  field9 String?
+  field10 String?
+  field11 String?
+  field12 String?
+  field13 String?
+  field14 String?
+  field15 String?
+
+  contactemail Contact? @relation(fields: [fields5Id], references: [email])
+  fields5Id String
+}
+
+
+enum Role {
+  USER
+  ADMIN
+}
