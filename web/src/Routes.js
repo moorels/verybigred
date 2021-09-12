@@ -71,7 +71,7 @@ const Routes = () => {
             </Set>{' '}
           </Private>
           <Route path="/login" page={LoginPage} name="login" />
-          <Route path="/signup" page={SignupPage} name="signup" />
+
           <Route path="/" page={HomepagePage} name="homepage" />
           <Route notfound page={NotFoundPage} />
         </Set>

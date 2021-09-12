@@ -19,7 +19,7 @@ const HeadzLayout = ({ children }) => {
 
   return (
     <>
-      <div className={styles.fonty}>
+      <div className={styles.body}>
         <header className="text-gray-600 body-font ">
           <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center ">
             <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 ">
@@ -88,7 +88,7 @@ const HeadzLayout = ({ children }) => {
               </ul>
             </nav>
             <div className="p-2   bg-white-500"></div>
-            <div className="p-2  text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700">
+            <div className="p-2 w-52 text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700">
               {`${date.toDateString()} ${tt} `}
             </div>
             <div className={styles.typewriter}>
