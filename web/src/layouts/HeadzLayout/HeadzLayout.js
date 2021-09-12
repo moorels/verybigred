@@ -104,3 +104,16 @@ const HeadzLayout = ({ children }) => {
 }
 
 export default HeadzLayout
+
+export async function getStaticProps() {
+  const res = await fetch('http://www.google.com')
+  const data = res.json
+  console.log('test')
+  console.log(data)
+
+  return {
+    props: {
+      data,
+    },
+  }
+}
