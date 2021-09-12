@@ -87,8 +87,8 @@ const HeadzLayout = ({ children }) => {
                 </li>
               </ul>
             </nav>
-            <div className="p-2   bg-white-500"></div>
-            <div className="p-2 w-52 text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700">
+            <div className="p-2   bg-white-500 place-content-center"></div>
+            <div className="p-2 w-56 justify-center text-center text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700">
               {`${date.toDateString()} ${tt} `}
             </div>
             <div className={styles.typewriter}>
