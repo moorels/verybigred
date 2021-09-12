@@ -21,7 +21,7 @@ const ContactsLayout = ({ children }) => {
           onClick={() => setShowModal(true)}
         >
           {' '}
-          Password Generator{' '}
+          PW Generator{' '}
         </button>{' '}
         {showModal ? (
           <>
