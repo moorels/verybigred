@@ -2,6 +2,7 @@ import { Link, routes } from '@redwoodjs/router'
 import { Toaster } from '@redwoodjs/web/toast'
 import { useState } from 'react'
 import Passgen from '../HeadzLayout/Passgen'
+import styles from '../HeadzLayout/HeadzLayout.module.css'
 
 const ContactsLayout = ({ children }) => {
   const [showModal, setShowModal] = useState(false)
@@ -9,19 +10,23 @@ const ContactsLayout = ({ children }) => {
   return (
     <div className="rw-scaffold">
       <Toaster />
-      <header className="rw-header">
-        <h1 className="rw-heading rw-heading-primary">
-          <Link to={routes.contacts()} className="rw-link">
-            Contacts
-          </Link>
+      <header className="rw-header px-4 py-1">
+        <h1 className="bg-blue-500 text-white active:bg-blue-500 font-bold uppercase text-sm px-4 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+          <Link to={routes.contacts()}>Contacts</Link>
         </h1>
+
+        <Link to={routes.newContact()} className="rw-button rw-button-green">
+          <div className="rw-button-icon">+</div> New Contact
+        </Link>
+      </header>
+      <div className="container flex-wrap p-4 flex-col md:flex-row items-center ">
         <button
-          className="bg-blue-500 text-white active:bg-blue-500 font-bold uppercase text-sm px-4 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          className="bg-blue-500  text-white active:bg-blue-500 font-bold uppercase text-sm px-4 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
           onClick={() => setShowModal(true)}
         >
           {' '}
-          PW Generator{' '}
+          PassWord Generator{' '}
         </button>{' '}
         {showModal ? (
           <>
@@ -50,10 +55,7 @@ const ContactsLayout = ({ children }) => {
             </div>
           </>
         ) : null}
-        <Link to={routes.newContact()} className="rw-button rw-button-green">
-          <div className="rw-button-icon">+</div> New Contact
-        </Link>
-      </header>
+      </div>
       <main className="rw-main">{children}</main>
     </div>
   )

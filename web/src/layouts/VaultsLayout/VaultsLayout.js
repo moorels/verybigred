@@ -9,19 +9,23 @@ const VaultsLayout = ({ children }) => {
   return (
     <div className="rw-scaffold">
       <Toaster />
-      <header className="rw-header">
-        <h1 className="rw-heading rw-heading-primary">
-          <Link to={routes.vaults()} className="rw-link">
-            Vaults
-          </Link>
+      <header className="rw-header px-4 py-1">
+        <h1 className="bg-blue-500 text-white active:bg-blue-500 font-bold uppercase text-sm px-4 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+          <Link to={routes.vaults()}>Vaults</Link>
         </h1>
+
+        <Link to={routes.newVault()} className="rw-button rw-button-green">
+          <div className="rw-button-icon">+</div> New Vault
+        </Link>
+      </header>
+      <div className="container flex-wrap p-4 flex-col md:flex-row items-center ">
         <button
-          className="bg-blue-500 text-white active:bg-blue-500 font-bold uppercase text-sm px-4 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          className="bg-blue-500  text-white active:bg-blue-500 font-bold uppercase text-sm px-4 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
           onClick={() => setShowModal(true)}
         >
           {' '}
-          PW Generator{' '}
+          PassWord Generator{' '}
         </button>{' '}
         {showModal ? (
           <>
@@ -50,10 +54,7 @@ const VaultsLayout = ({ children }) => {
             </div>
           </>
         ) : null}
-        <Link to={routes.newVault()} className="rw-button rw-button-green">
-          <div className="rw-button-icon">+</div> New Vault
-        </Link>
-      </header>
+      </div>
       <main className="rw-main">{children}</main>
     </div>
   )
