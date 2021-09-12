@@ -78,7 +78,7 @@ const HeadzLayout = ({ children }) => {
                       className="p-2 text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700"
                       to={routes.contacts()}
                     >
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-gray-100">
+                      <span className=" relative inline-flex rounded-full h-2 w-2 bg-gray-100">
                         <span className=" animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-100 opacity-75"></span>
                       </span>
                       <span> Contacts</span>
@@ -86,11 +86,12 @@ const HeadzLayout = ({ children }) => {
                   </div>
                 </li>
               </ul>
+              <div className="p-2 m-3 w-60 justify-center text-center text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700">
+                {`${date.toDateString()} ${tt} `}
+              </div>
             </nav>
             <div className="p-2   bg-white-500 place-content-center"></div>
-            <div className="p-2 w-60 justify-center text-center text-indigo-100 transition-colors duration-150 bg-blue-500 rounded-lg focus:shadow-outline hover:bg-blue-700">
-              {`${date.toDateString()} ${tt} `}
-            </div>
+
             <div className={styles.typewriter}>
               <h1>Welcome to Password Safe.</h1>
             </div>
