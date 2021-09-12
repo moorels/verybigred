@@ -4,7 +4,6 @@ import Passgen from '../HeadzLayout/Passgen'
 import { useState } from 'react'
 
 const VaultsLayout = ({ children }) => {
-  const [key, setKey] = useState('')
   const [showModal, setShowModal] = useState(false)
 
   return (
@@ -17,7 +16,7 @@ const VaultsLayout = ({ children }) => {
           </Link>
         </h1>
         <button
-          className="bg-blue-500 text-white active:bg-blue-500 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          className="bg-blue-500 text-white active:bg-blue-500 font-bold uppercase text-sm px-4 py-1 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
           type="button"
           onClick={() => setShowModal(true)}
         >
