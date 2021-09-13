@@ -2,8 +2,8 @@ import React from 'react'
 
 function Passgen() {
   var chars =
-    '0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  var passwordLength = 15
+    '0123456789abcdefghijklmnopqrstuvwxyz@#$&@#$&@#$&ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var passwordLength = 10
   var password = ''
 
   for (var i = 0; i <= passwordLength; i++) {
